@@ -288,6 +288,15 @@ img,svg{display:block;max-width:100%}
 /* hide nav whatsapp button on mobile (floating button covers it) */
 @media (max-width:860px){.nav-wa{display:none!important}}
 
+/* store gallery */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:52px}
+.gallery figure{margin:0;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;background:var(--stone-100);border:1px solid var(--stone-200)}
+.gallery figure.wide{grid-column:span 2;grid-row:span 1}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
+.gallery figure:hover img{transform:scale(1.05)}
+@media (max-width:860px){.gallery{grid-template-columns:repeat(2,1fr)}.gallery figure.wide{grid-column:span 2}}
+@media (max-width:520px){.gallery{grid-template-columns:1fr}.gallery figure.wide{grid-column:span 1}}
+
 </style>
 <script type="application/ld+json">
 {
@@ -323,6 +332,7 @@ img,svg{display:block;max-width:100%}
     <a href="#products">Products</a>
     <a href="#preowned">Pre-Owned</a>
     <a href="#why">Why iDrop</a>
+    <a href="#gallery">Store</a>
     <a href="#visit">Visit</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -340,6 +350,7 @@ img,svg{display:block;max-width:100%}
   <li><a href="#products">Products</a></li>
   <li><a href="#preowned">Pre-Owned</a></li>
   <li><a href="#why">Why iDrop</a></li>
+  <li><a href="#gallery">Store</a></li>
   <li><a href="#visit">Visit</a></li>
   <li><a href="#contact">Contact</a></li>
   <li><a class="btn btn-dark" href="tel:+918848026572">Call +91 88480 26572</a></li>
@@ -473,6 +484,23 @@ img,svg{display:block;max-width:100%}
   </div>
 </div></section>
 
+<!-- Gallery -->
+<section class="section" id="gallery"><div class="wrap">
+  <div class="sec-head center reveal">
+    <span class="eyebrow">Step inside</span>
+    <h2>A look at the iDrop store</h2>
+    <p class="h-sub">Our Sulthan Bathery showroom - a modern space to see, try and buy the latest Apple, with a friendly team and an in-house service desk.</p>
+  </div>
+  <div class="gallery">
+    <figure class="wide"><img loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHoqHZzxJ-zqlN-T1wkHQMjmO2qdVygCJce3BjDmGdw28OvLu_r5EWPWkwJ7onzNQ5BKWSmiGV8eBxrg2xoyQkV5Hx7QMUMDL9O4QInA6P_5Zu_y-NrXrLlsdxDuNF7_dTE6S7WCw=w1200-h900" alt="iDrop Premium Apple Resellers storefront sign in Sulthan Bathery"></figure>
+    <figure><img loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGTGCSzh0nHA40RzB4hNS-EkWJbahfw91ftBJ9Htm5VO2F6Mo0FSqR6Aodr-rNJ61XN3_FriTf70kp5j2CiBmhAF0iDrMByAad7E3cwnIDqYpC8je96m6OoizsguwgE_DMDYUnF=w1200-h900" alt="Inside the iDrop store - Apple product display tables"></figure>
+    <figure><img loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAH1fUeDyIunbGgGlKVmxcUkUz5PhGo1ceiB4hnK1ok-t3O4OYhAl3y8-sGovE7BmNJEmxHg_KDAgQmtfUP8vK1RcCq1cynEun4MIMD6uh71m_QgGJEij2SOMv2WNlzE7JjmJps=w1200-h900" alt="iDrop store wall display with the latest devices and accessories"></figure>
+    <figure><img loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFvqAnO8FtLPOogYeKnKkB46ldOWiLQGwoZaVDJmF4T7DwoHBcmsvdjqQgyMnY5oboo3MQIfTjYyrl09rL72kWxest__CGWH1Q4OYm6NcZDZ8oXBG3g2WWOKcXYcGzrxqxRNy1E=w1200-h900" alt="iDrop storefront in the evening with customers being served"></figure>
+    <figure><img loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHqMkmolhqPYPxn7QUzPBQTZeB2NPH-IAIlF3z4hvFYknRz_A1vfaqNfL3rKGIRnptVTgRPrAfgSwXY8XJ5t7Z9Wd2MXxqCx_57UdExJc_X54WuK0CCQSSdTKEDs9SijIqfDuCa=w1200-h900" alt="iDrop showroom interior with seating and device displays"></figure>
+    <figure><img loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGyhMUAQ1SN9bMeyrV9hvsb8WqdnInlhJWAzQiJOoBIRDvKNzZgnJKZ97j44W9eH03XB_amwKyVkNsOKXi9Rq0cT0ADYViPxAz6Vftu28ueP9Yc7a2qXYbIXKDsGZpOVgIJTNJv=w1200-h900" alt="iDrop service desk - technicians at work"></figure>
+  </div>
+</div></section>
+
 <!-- Visit -->
 <section class="section" id="visit" style="background:var(--paper);border-top:1px solid var(--stone-200)"><div class="wrap">
   <div class="sec-head reveal">
@@ -559,6 +587,7 @@ img,svg{display:block;max-width:100%}
         <li><a href="#products">Products</a></li>
         <li><a href="#preowned">Pre-Owned</a></li>
         <li><a href="#why">Why iDrop</a></li>
+  <li><a href="#gallery">Store</a></li>
         <li><a href="#reviews">Reviews</a></li>
       </ul>
     </div>
