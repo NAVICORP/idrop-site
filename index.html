@@ -7,8 +7,8 @@
 <meta name="description" content="iDrop is an Apple Authorised premium reseller in Sulthan Bathery, Wayanad. Shop brand-new & certified pre-owned iPhone, iPad, MacBook, Apple Watch & AirPods with warranty, easy EMI and delivery all over India.">
 <meta name="theme-color" content="#0C0A09">
 <link rel="canonical" href="https://idrop.skifidesigns.com/">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="favicon.png">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="iDrop - Premium Apple Resellers">
@@ -19,7 +19,7 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ===== iDrop - Premium Apple Resellers ===== */
 :root{
@@ -34,7 +34,7 @@
   --sh-2:0 8px 30px rgba(12,10,9,.10);
   --sh-3:0 24px 60px rgba(12,10,9,.18);
   --ease:cubic-bezier(.22,.61,.36,1);
-  --font-d:"Jost",system-ui,sans-serif;
+  --font-d:"Chakra Petch",system-ui,sans-serif;
   --font-b:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -277,6 +277,17 @@ img,svg{display:block;max-width:100%}
 @media (prefers-reduced-motion:reduce){.wa-float::after{animation:none;display:none}.wa-float:hover{transform:none}}
 @media (max-width:520px){.wa-float{width:54px;height:54px}.wa-float svg{width:29px;height:29px}.wa-tip{display:none}}
 
+
+/* official logo images */
+.brand .mark img,.hero-mark img{width:100%;height:auto;display:block}
+.brand .mark img{filter:brightness(0)}        /* dark logo on light nav */
+.foot .brand .mark img{filter:none}            /* white logo on dark footer */
+.hero-mark img{filter:none}                    /* white logo on dark hero/ig */
+.nav .brand .mark{display:inline-flex;align-items:center}
+
+/* hide nav whatsapp button on mobile (floating button covers it) */
+@media (max-width:860px){.nav-wa{display:none!important}}
+
 </style>
 <script type="application/ld+json">
 {
@@ -305,7 +316,7 @@ img,svg{display:block;max-width:100%}
 <!-- Nav -->
 <header class="nav" id="nav"><div class="wrap">
   <a class="brand" href="#top" aria-label="iDrop home">
-    <span class="mark" aria-hidden="true"><svg viewBox="0 0 200 210" fill="none" style="width:100%;height:auto" aria-hidden="true"><g stroke="currentColor" stroke-width="11" stroke-linecap="round" fill="none"><path d="M58.7 168.98 A72 72 0 1 1 141.3 168.98"/><path d="M69.03 154.24 A54 54 0 1 1 130.97 154.24"/></g><rect x="74" y="78" width="52" height="50" rx="13" fill="currentColor"/><g fill="var(--mark-bg,#000)"><circle cx="90" cy="91" r="3.6"/><rect x="86.6" y="97" width="6.8" height="19" rx="3.2"/><path fill-rule="evenodd" d="M101 97 h8.5 a9.5 9.5 0 0 1 9.5 9.5 a9.5 9.5 0 0 1 -9.5 9.5 H101 Z M107.6 103 v7 h1.9 a3.5 3.5 0 0 0 0 -7 Z"/></g><path d="M100 150 C113 150 125 171 120.5 181.5 C116.5 191 83.5 191 79.5 181.5 C75 171 87 150 100 150 Z" fill="currentColor"/></svg></span>
+    <span class="mark" aria-hidden="true"><img src="logo-mark.png" alt="iDrop logo" style="width:100%;height:auto;display:block"></span>
     <span class="word">i<b>Drop</b></span>
   </a>
   <nav class="nav-links" aria-label="Primary">
@@ -316,7 +327,7 @@ img,svg{display:block;max-width:100%}
     <a href="#contact">Contact</a>
   </nav>
   <div class="nav-cta">
-    <a class="btn btn-dark" href="https://wa.me/918848026572?text=Hi%20iDrop%2C%20I%27d%20like%20an%20enquiry" target="_blank" rel="noopener">
+    <a class="btn btn-dark nav-wa" href="https://wa.me/918848026572?text=Hi%20iDrop%2C%20I%27d%20like%20an%20enquiry" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.86C0 5.32 5.33 0 11.9 0a11.82 11.82 0 018.41 3.49 11.78 11.78 0 013.48 8.39c0 6.54-5.33 11.86-11.9 11.86a12 12 0 01-5.7-1.45L.06 24zM6.6 20.2l.36.21a9.86 9.86 0 005 1.37 9.88 9.88 0 009.9-9.86 9.74 9.74 0 00-2.9-6.99A9.82 9.82 0 0011.9 2 9.88 9.88 0 002 11.86a9.78 9.78 0 001.5 5.24l.24.38-1 3.65 3.86-.93zm11.69-5.62c-.08-.14-.3-.23-.63-.4-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.24-.18.21-.37.24-.68.08a8.05 8.05 0 01-2.38-1.47 9 9 0 01-1.65-2.05c-.17-.3 0-.46.14-.61.14-.14.32-.37.48-.55.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.55-.08-.16-.72-1.74-1-2.38-.26-.62-.53-.54-.72-.55l-.62-.01c-.21 0-.55.08-.84.4-.29.32-1.1 1.08-1.1 2.63 0 1.55 1.13 3.05 1.29 3.26.16.21 2.22 3.4 5.39 4.77.75.32 1.34.52 1.8.66.76.24 1.45.21 1.99.13.61-.09 1.9-.78 2.16-1.53.27-.74.27-1.38.19-1.52z"/></svg>
       WhatsApp
     </a>
@@ -339,7 +350,7 @@ img,svg{display:block;max-width:100%}
 <!-- Hero -->
 <section class="hero">
   <div class="wrap">
-    <span class="hero-mark" aria-hidden="true"><svg viewBox="0 0 200 210" fill="none" style="width:100%;height:auto" aria-hidden="true"><g stroke="currentColor" stroke-width="11" stroke-linecap="round" fill="none"><path d="M58.7 168.98 A72 72 0 1 1 141.3 168.98"/><path d="M69.03 154.24 A54 54 0 1 1 130.97 154.24"/></g><rect x="74" y="78" width="52" height="50" rx="13" fill="currentColor"/><g fill="var(--mark-bg,#000)"><circle cx="90" cy="91" r="3.6"/><rect x="86.6" y="97" width="6.8" height="19" rx="3.2"/><path fill-rule="evenodd" d="M101 97 h8.5 a9.5 9.5 0 0 1 9.5 9.5 a9.5 9.5 0 0 1 -9.5 9.5 H101 Z M107.6 103 v7 h1.9 a3.5 3.5 0 0 0 0 -7 Z"/></g><path d="M100 150 C113 150 125 171 120.5 181.5 C116.5 191 83.5 191 79.5 181.5 C75 171 87 150 100 150 Z" fill="currentColor"/></svg></span>
+    <span class="hero-mark" aria-hidden="true"><img src="logo-mark.png" alt="iDrop logo" style="width:100%;height:auto;display:block"></span>
     <span class="eyebrow">Apple Authorised · Premium Apple Resellers</span>
     <h1>Premium Apple.<br><span class="thin">Brand-new &amp; certified pre-owned.</span></h1>
     <p class="hero-sub">Your trusted Apple destination in Sulthan Bathery, Wayanad - genuine iPhone, iPad, MacBook, Apple Watch &amp; AirPods, with warranty, easy EMI and doorstep delivery across India.</p>
@@ -521,7 +532,7 @@ img,svg{display:block;max-width:100%}
 
 <!-- Instagram -->
 <section class="ig"><div class="wrap">
-  <span class="hero-mark" style="width:64px" aria-hidden="true"><svg viewBox="0 0 200 210" fill="none" style="width:100%;height:auto" aria-hidden="true"><g stroke="currentColor" stroke-width="11" stroke-linecap="round" fill="none"><path d="M58.7 168.98 A72 72 0 1 1 141.3 168.98"/><path d="M69.03 154.24 A54 54 0 1 1 130.97 154.24"/></g><rect x="74" y="78" width="52" height="50" rx="13" fill="currentColor"/><g fill="var(--mark-bg,#000)"><circle cx="90" cy="91" r="3.6"/><rect x="86.6" y="97" width="6.8" height="19" rx="3.2"/><path fill-rule="evenodd" d="M101 97 h8.5 a9.5 9.5 0 0 1 9.5 9.5 a9.5 9.5 0 0 1 -9.5 9.5 H101 Z M107.6 103 v7 h1.9 a3.5 3.5 0 0 0 0 -7 Z"/></g><path d="M100 150 C113 150 125 171 120.5 181.5 C116.5 191 83.5 191 79.5 181.5 C75 171 87 150 100 150 Z" fill="currentColor"/></svg></span>
+  <span class="hero-mark" style="width:64px" aria-hidden="true"><img src="logo-mark.png" alt="iDrop logo" style="width:100%;height:auto;display:block"></span>
   <h2>Follow the drops on Instagram</h2>
   <p class="handle">@i.drop_ · 38K+ followers</p>
   <a class="btn btn-light" href="https://www.instagram.com/i.drop_/" target="_blank" rel="noopener">
@@ -537,7 +548,7 @@ img,svg{display:block;max-width:100%}
   <div class="top">
     <div>
       <a class="brand" href="#top" aria-label="iDrop home">
-        <span class="mark" style="width:30px;height:31px;--mark-bg:#0f0d0c" aria-hidden="true"><svg viewBox="0 0 200 210" fill="none" style="width:100%;height:auto" aria-hidden="true"><g stroke="currentColor" stroke-width="11" stroke-linecap="round" fill="none"><path d="M58.7 168.98 A72 72 0 1 1 141.3 168.98"/><path d="M69.03 154.24 A54 54 0 1 1 130.97 154.24"/></g><rect x="74" y="78" width="52" height="50" rx="13" fill="currentColor"/><g fill="var(--mark-bg,#000)"><circle cx="90" cy="91" r="3.6"/><rect x="86.6" y="97" width="6.8" height="19" rx="3.2"/><path fill-rule="evenodd" d="M101 97 h8.5 a9.5 9.5 0 0 1 9.5 9.5 a9.5 9.5 0 0 1 -9.5 9.5 H101 Z M107.6 103 v7 h1.9 a3.5 3.5 0 0 0 0 -7 Z"/></g><path d="M100 150 C113 150 125 171 120.5 181.5 C116.5 191 83.5 191 79.5 181.5 C75 171 87 150 100 150 Z" fill="currentColor"/></svg></span>
+        <span class="mark" style="width:30px;height:31px;--mark-bg:#0f0d0c" aria-hidden="true"><img src="logo-mark.png" alt="iDrop logo" style="width:100%;height:auto;display:block"></span>
         <span class="word">i<b>Drop</b></span>
       </a>
       <p>Premium Apple Resellers in Sulthan Bathery, Wayanad. Brand-new &amp; certified pre-owned Apple products with warranty and delivery all over India.</p>
