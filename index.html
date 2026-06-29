@@ -288,14 +288,16 @@ img,svg{display:block;max-width:100%}
 /* hide nav whatsapp button on mobile (floating button covers it) */
 @media (max-width:860px){.nav-wa{display:none!important}}
 
-/* store gallery */
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:52px}
-.gallery figure{margin:0;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;background:var(--stone-100);border:1px solid var(--stone-200)}
-.gallery figure.wide{grid-column:span 2;grid-row:span 1}
+/* store gallery - packed mosaic, no empty space */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-flow:dense;gap:12px;margin-top:52px}
+.gallery figure{margin:0;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:1;background:var(--stone-100);border:1px solid var(--stone-200);position:relative}
 .gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
-.gallery figure:hover img{transform:scale(1.05)}
-@media (max-width:860px){.gallery{grid-template-columns:repeat(2,1fr)}.gallery figure.wide{grid-column:span 2}}
-@media (max-width:520px){.gallery{grid-template-columns:1fr}.gallery figure.wide{grid-column:span 1}}
+.gallery figure::after{content:"";position:absolute;inset:0;box-shadow:inset 0 -40px 50px -30px rgba(12,10,9,.28);opacity:0;transition:opacity .4s var(--ease)}
+.gallery figure:hover img{transform:scale(1.06)}
+.gallery figure:hover::after{opacity:1}
+.gallery .feature{grid-column:span 2;grid-row:span 2}
+@media (max-width:860px){.gallery{grid-template-columns:repeat(2,1fr)}.gallery .feature{grid-column:span 2;grid-row:span 1;aspect-ratio:16/10}}
+@media (max-width:520px){.gallery{grid-template-columns:1fr;gap:10px}.gallery .feature{grid-column:auto;aspect-ratio:1}}
 
 </style>
 <script type="application/ld+json">
@@ -492,7 +494,7 @@ img,svg{display:block;max-width:100%}
     <p class="h-sub">Our Sulthan Bathery showroom - a modern space to see, try and buy the latest Apple, with a friendly team and an in-house service desk.</p>
   </div>
   <div class="gallery">
-    <figure class="wide"><img loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHoqHZzxJ-zqlN-T1wkHQMjmO2qdVygCJce3BjDmGdw28OvLu_r5EWPWkwJ7onzNQ5BKWSmiGV8eBxrg2xoyQkV5Hx7QMUMDL9O4QInA6P_5Zu_y-NrXrLlsdxDuNF7_dTE6S7WCw=w1200-h900" alt="iDrop Premium Apple Resellers storefront sign in Sulthan Bathery"></figure>
+    <figure class="feature"><img loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHoqHZzxJ-zqlN-T1wkHQMjmO2qdVygCJce3BjDmGdw28OvLu_r5EWPWkwJ7onzNQ5BKWSmiGV8eBxrg2xoyQkV5Hx7QMUMDL9O4QInA6P_5Zu_y-NrXrLlsdxDuNF7_dTE6S7WCw=w1200-h900" alt="iDrop Premium Apple Resellers storefront sign in Sulthan Bathery"></figure>
     <figure><img loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGTGCSzh0nHA40RzB4hNS-EkWJbahfw91ftBJ9Htm5VO2F6Mo0FSqR6Aodr-rNJ61XN3_FriTf70kp5j2CiBmhAF0iDrMByAad7E3cwnIDqYpC8je96m6OoizsguwgE_DMDYUnF=w1200-h900" alt="Inside the iDrop store - Apple product display tables"></figure>
     <figure><img loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAH1fUeDyIunbGgGlKVmxcUkUz5PhGo1ceiB4hnK1ok-t3O4OYhAl3y8-sGovE7BmNJEmxHg_KDAgQmtfUP8vK1RcCq1cynEun4MIMD6uh71m_QgGJEij2SOMv2WNlzE7JjmJps=w1200-h900" alt="iDrop store wall display with the latest devices and accessories"></figure>
     <figure><img loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFvqAnO8FtLPOogYeKnKkB46ldOWiLQGwoZaVDJmF4T7DwoHBcmsvdjqQgyMnY5oboo3MQIfTjYyrl09rL72kWxest__CGWH1Q4OYm6NcZDZ8oXBG3g2WWOKcXYcGzrxqxRNy1E=w1200-h900" alt="iDrop storefront in the evening with customers being served"></figure>
