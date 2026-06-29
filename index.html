@@ -73,11 +73,19 @@ img,svg{display:block;max-width:100%}
 .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 .btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 
-/* announcement */
-.announce{background:var(--ink);color:#f5f5f4;font-size:.82rem;letter-spacing:.01em}
-.announce .wrap{display:flex;align-items:center;justify-content:center;gap:.6em;padding-block:9px;text-align:center}
-.announce strong{color:var(--accent-soft);font-weight:600}
-.announce .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none}
+/* announce - single-line moving ticker */
+.announce{background:var(--ink);color:#f5f5f4;font-size:.82rem;letter-spacing:.01em;overflow:hidden}
+.announce .marquee{display:flex;overflow:hidden;white-space:nowrap;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.announce .marquee-track{display:inline-flex;flex:none;align-items:center;padding-block:9px;animation:annmarquee 32s linear infinite}
+.announce .mg{display:inline-flex;align-items:center}
+.announce:hover .marquee-track{animation-play-state:paused}
+.announce .ann-item{display:inline-flex;align-items:center;padding:0 .55em;flex:none}
+.announce strong{color:var(--accent-soft);font-weight:600;margin-right:.4em}
+.announce .dot{width:4px;height:4px;border-radius:50%;background:var(--accent);flex:none;margin:0 .35em}
+@keyframes annmarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.announce .marquee-track{animation:none}}
 
 /* nav */
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.72);backdrop-filter:saturate(160%) blur(14px);
@@ -319,10 +327,7 @@ img,svg{display:block;max-width:100%}
 <body>
 
 <!-- Announcement -->
-<div class="announce"><div class="wrap">
-  <span class="dot"></span><span><strong>Now live:</strong> seasonal offers on iPhone &amp; MacBook</span>
-  <span class="dot"></span><span>Delivery all over India</span>
-</div></div>
+<div class="announce" aria-label="Announcements"><div class="marquee"><div class="marquee-track"><span class="mg"><span class="ann-item"><strong>Now live:</strong> Seasonal offers on iPhone &amp; MacBook</span><span class="dot"></span><span class="ann-item">Brand-new &amp; certified pre-owned</span><span class="dot"></span><span class="ann-item">Easy EMI &amp; exchange available</span><span class="dot"></span><span class="ann-item">Delivery all over India</span><span class="dot"></span><span class="ann-item">Apple Authorised · Sulthan Bathery, Wayanad</span><span class="dot"></span></span><span class="mg" aria-hidden="true"><span class="ann-item"><strong>Now live:</strong> Seasonal offers on iPhone &amp; MacBook</span><span class="dot"></span><span class="ann-item">Brand-new &amp; certified pre-owned</span><span class="dot"></span><span class="ann-item">Easy EMI &amp; exchange available</span><span class="dot"></span><span class="ann-item">Delivery all over India</span><span class="dot"></span><span class="ann-item">Apple Authorised · Sulthan Bathery, Wayanad</span><span class="dot"></span></span></div></div></div>
 
 <!-- Nav -->
 <header class="nav" id="nav"><div class="wrap">
