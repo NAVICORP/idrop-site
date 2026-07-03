@@ -312,6 +312,59 @@ img,svg{display:block;max-width:100%}
 .foot .credit a{color:#d6d3d1;font-weight:600}
 .foot .credit a:hover{color:#fff;text-decoration:underline}
 
+/* ===== warranty & support ===== */
+.warranty{background:var(--black);color:#fff;position:relative;overflow:hidden}
+.warranty::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(700px 380px at 12% 0,rgba(176,141,87,.18),transparent 60%),
+  radial-gradient(600px 500px at 100% 100%,rgba(255,255,255,.05),transparent 60%)}
+.warranty .wrap{position:relative}
+.warranty .eyebrow{color:var(--accent-soft)}
+.warranty .h-sub{color:#cfcac4}
+.warranty h2,.warranty h3{color:#fff}
+
+.wcards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:50px}
+.wcard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);padding:clamp(26px,3.5vw,36px);transition:border-color .3s,transform .3s var(--ease)}
+.wcard:hover{border-color:rgba(255,255,255,.28);transform:translateY(-4px)}
+.wcard .wic{width:54px;height:54px;border-radius:15px;background:#fff;color:var(--black);display:grid;place-items:center}
+.wcard .wic svg{width:28px;height:28px}
+.wcard h3{font-size:clamp(1.25rem,2.2vw,1.5rem);margin:18px 0 8px}
+.wcard p{color:#cfcac4;font-size:.98rem;line-height:1.65}
+
+.warranty-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-top:18px}
+.claim,.why-w{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-lg);padding:clamp(26px,3.5vw,36px)}
+.claim h3,.why-w h3{font-size:1.28rem;margin-bottom:12px}
+.claim p{color:#cfcac4;margin-bottom:20px;line-height:1.65}
+.why-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+.why-list li{display:flex;align-items:center;gap:13px;color:#e7e5e4;font-family:var(--font-d);font-weight:500;font-size:1.02rem}
+.why-list li svg{width:24px;height:24px;color:var(--accent-soft);flex:none}
+
+.faq{margin-top:48px;max-width:840px;margin-inline:auto}
+.faq-title{font-family:var(--font-d);text-transform:uppercase;letter-spacing:.16em;font-size:.86rem;color:#a8a29e;margin-bottom:10px;font-weight:600}
+.faq-item{border-top:1px solid rgba(255,255,255,.13)}
+.faq-item:last-child{border-bottom:1px solid rgba(255,255,255,.13)}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:20px 2px;font-family:var(--font-d);font-weight:500;font-size:clamp(1rem,1.6vw,1.12rem);color:#fff}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-ic{position:relative;width:18px;height:18px;flex:none;transition:transform .3s var(--ease)}
+.faq-ic::before,.faq-ic::after{content:"";position:absolute;background:#fff;border-radius:2px}
+.faq-ic::before{left:0;top:8px;width:18px;height:2px}
+.faq-ic::after{left:8px;top:0;width:2px;height:18px}
+.faq-item[open] .faq-ic{transform:rotate(45deg)}
+.faq-a{padding:0 2px 22px;color:#cfcac4;line-height:1.7;max-width:74ch}
+
+.terms{margin-top:44px;display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:center}
+.terms>span{color:#a8a29e;font-size:.9rem}
+.terms a{display:inline-flex;align-items:center;gap:.5em;font-family:var(--font-d);font-weight:500;font-size:.92rem;color:#fff;
+  border:1px solid rgba(255,255,255,.22);padding:.62em 1.05em;border-radius:var(--r-pill);transition:background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease)}
+.terms a svg{width:1.05em;height:1.05em}
+.terms a:hover{background:#fff;color:var(--black);border-color:#fff}
+
+@media (max-width:860px){
+  .wcards,.warranty-grid{grid-template-columns:1fr}
+  .terms{flex-direction:column;align-items:stretch;text-align:center}
+  .terms a{justify-content:center}
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -344,6 +397,7 @@ img,svg{display:block;max-width:100%}
     <a href="#products">Products</a>
     <a href="#preowned">Pre-Owned</a>
     <a href="#why">Why iDrop</a>
+    <a href="#warranty">Warranty</a>
     <a href="#gallery">Store</a>
     <a href="#visit">Visit</a>
     <a href="#contact">Contact</a>
@@ -362,6 +416,7 @@ img,svg{display:block;max-width:100%}
   <li><a href="#products">Products</a></li>
   <li><a href="#preowned">Pre-Owned</a></li>
   <li><a href="#why">Why iDrop</a></li>
+  <li><a href="#warranty">Warranty</a></li>
   <li><a href="#gallery">Store</a></li>
   <li><a href="#visit">Visit</a></li>
   <li><a href="#contact">Contact</a></li>
@@ -540,6 +595,63 @@ img,svg{display:block;max-width:100%}
   </div>
 </div></section>
 
+<!-- Warranty -->
+<section class="warranty" id="warranty"><div class="wrap">
+  <div class="sec-head center reveal">
+    <span class="eyebrow">Warranty &amp; Support</span>
+    <h2>Covered, and cared for.</h2>
+    <p class="h-sub">Every purchase and repair at iDrop is backed by a clear warranty and a dedicated support team.</p>
+  </div>
+
+  <div class="wcards">
+    <article class="wcard reveal">
+      <span class="wic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5zm-1.2 15L7 12.2l1.4-1.4 2.4 2.4 4.8-4.8L17 9.8z"/></svg></span>
+      <h3>1-Year Service Warranty</h3>
+      <p>Covers repairs for physical damage, hardware issues and software glitches with no service charges. Spare parts, if required, are billed separately.</p>
+    </article>
+    <article class="wcard reveal">
+      <span class="wic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.8l-.3-.3a6.5 6.5 0 10-.7.7l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0A4.5 4.5 0 1114 9.5 4.49 4.49 0 019.5 14z"/></svg></span>
+      <h3>1-Month Checking Warranty</h3>
+      <p>A one-month checking warranty on your device. Excludes display, Face ID, software-update issues and physical or liquid damage.</p>
+    </article>
+  </div>
+
+  <div class="warranty-grid">
+    <div class="claim reveal">
+      <h3>How to Claim Warranty</h3>
+      <p>To claim warranty, send a message to our WhatsApp number with your Order ID and issue details. Our team will verify your order and guide you through the repair process.</p>
+      <a class="btn btn-wa" href="https://wa.me/918848026572?text=Hi%20iDrop%2C%20I%27d%20like%20to%20claim%20my%20warranty.%20My%20Order%20ID%20is%3A%20" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.86C0 5.32 5.33 0 11.9 0a11.82 11.82 0 018.41 3.49 11.78 11.78 0 013.48 8.39c0 6.54-5.33 11.86-11.9 11.86a12 12 0 01-5.7-1.45L.06 24z"/></svg>
+        Claim on WhatsApp
+      </a>
+    </div>
+    <div class="why-w reveal">
+      <h3>Why iDrop</h3>
+      <ul class="why-list">
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 015 5 5 5 0 01-2.1 4.06L16 22l-4-2.2L8 22l1.1-10.94A5 5 0 017 7a5 5 0 015-5z"/></svg>Premium Repair Quality</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5zm-1.2 15L7 12.2l1.4-1.4 2.4 2.4 4.8-4.8L17 9.8z"/></svg>1-Year Service Warranty</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 6.5a5 5 0 01-6.6 4.7L6 20.6a2 2 0 01-2.8-2.8l9.4-9.4A5 5 0 0117.5 2l-2.9 2.9 1.9 1.9L19.4 4A5 5 0 0122 6.5z"/></svg>Skilled Technicians</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1a5 5 0 00-5 5v3H6a2 2 0 00-2 2v9a2 2 0 002 2h12a2 2 0 002-2v-9a2 2 0 00-2-2h-1V6a5 5 0 00-5-5zm3 8H9V6a3 3 0 016 0z"/></svg>Guaranteed Data Safety</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="faq reveal">
+    <h3 class="faq-title">Frequently Asked Questions</h3>
+    <details class="faq-item"><summary>How do I claim warranty?<i class="faq-ic"></i></summary><div class="faq-a">To claim your warranty, contact our support team on WhatsApp and share your Order ID along with a short description of the issue. Our team will verify your order and guide you through the repair process.</div></details>
+    <details class="faq-item"><summary>What does the 1-year service warranty cover?<i class="faq-ic"></i></summary><div class="faq-a">It covers repairs for physical damage, hardware issues and software glitches at no service charge. Any replacement spare parts are billed separately. It is a service warranty, not a free replacement or full-cover guarantee.</div></details>
+    <details class="faq-item"><summary>What is the 1-month checking warranty?<i class="faq-ic"></i></summary><div class="faq-a">A short one-month warranty to check your device after purchase. It does not cover display, Face ID, software-update issues, or physical and liquid damage.</div></details>
+    <details class="faq-item"><summary>Is my data safe during a repair?<i class="faq-ic"></i></summary><div class="faq-a">We take every care with your device, but please back up your data before service. Mobile data can be lost during repair and the shop is not liable for data loss, so we recommend keeping a recent backup.</div></details>
+    <details class="faq-item"><summary>How long can I leave my device for service?<i class="faq-ic"></i></summary><div class="faq-a">Please collect your device within 30 days. Verify the handset before leaving the counter, and report any issue within 48 hours of collection so we can assist you quickly.</div></details>
+  </div>
+
+  <div class="terms reveal">
+    <span>Full terms &amp; conditions:</span>
+    <a href="idrop-sales-terms.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm0 2 4 4h-4z"/></svg>Sales Terms &amp; Conditions (PDF)</a>
+    <a href="idrop-service-terms.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm0 2 4 4h-4z"/></svg>Service Terms &amp; Conditions (PDF)</a>
+  </div>
+</div></section>
+
 <!-- Contact / enquiry -->
 <section class="section" id="contact"><div class="wrap">
   <div class="sec-head center reveal">
@@ -599,8 +711,12 @@ img,svg{display:block;max-width:100%}
         <li><a href="#products">Products</a></li>
         <li><a href="#preowned">Pre-Owned</a></li>
         <li><a href="#why">Why iDrop</a></li>
+  <li><a href="#warranty">Warranty</a></li>
   <li><a href="#gallery">Store</a></li>
+        <li><a href="#warranty">Warranty</a></li>
         <li><a href="#reviews">Reviews</a></li>
+        <li><a href="idrop-sales-terms.pdf" target="_blank" rel="noopener">Sales Terms (PDF)</a></li>
+        <li><a href="idrop-service-terms.pdf" target="_blank" rel="noopener">Service Terms (PDF)</a></li>
       </ul>
     </div>
     <div>
