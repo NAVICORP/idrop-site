@@ -1,10 +1,10 @@
-/* idropdigital.com: the menu, the sticky bar, reveals, and the WhatsApp enquiry. */
+/* idropdigital.com: the menu, the sticky bar, reveals, the finish pickers and the WhatsApp enquiry. */
 (() => {
   document.documentElement.classList.add('js');
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
-  // nav shadow once the page moves
+  // hairline under the nav once the page moves
   const nav = $('.nav');
   const onScroll = () => nav.classList.toggle('is-stuck', scrollY > 8);
   onScroll();
@@ -21,16 +21,17 @@
   };
   toggle.addEventListener('click', () => setMenu(menu.hidden));
   $$('a', menu).forEach((a) => a.addEventListener('click', () => setMenu(false)));
+  addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) { setMenu(false); toggle.focus(); } });
 
-  // reveal sections as they come in
-  const items = $$('.head, .launch__card, .tile, .way, .why__card, .offer, .care__copy, .wcard, .review, .g, .visit__info, .visit__map, .q, .ask');
+  // calm reveals: fade and rise as each block comes in
+  const items = $$('.head, .lt, .tile, .way, .why__card, .offer__copy, .care__copy, .wcard, .g, .visit__info, .visit__map, .qs, .terms, .ask__copy, .form');
   items.forEach((el) => el.classList.add('rv'));
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (!e.isIntersecting) return;
         const sibs = [...e.target.parentElement.children].filter((c) => c.classList.contains('rv'));
-        e.target.style.transitionDelay = `${Math.min(sibs.indexOf(e.target), 5) * 70}ms`;
+        e.target.style.transitionDelay = `${Math.min(sibs.indexOf(e.target), 5) * 60}ms`;
         e.target.classList.add('is-in');
         io.unobserve(e.target);
       });
@@ -40,33 +41,35 @@
     items.forEach((el) => el.classList.add('is-in'));
   }
 
+  // finish pickers on the new iPhones: recolour the drawn phone
+  $$('[data-finish]').forEach((card) => {
+    const art = $('.ph, .fold', card);
+    const name = $('.finish__name', card);
+    $$('.dot', card).forEach((dot) => dot.addEventListener('click', () => {
+      $$('.dot', card).forEach((d) => {
+        d.classList.toggle('is-on', d === dot);
+        d.setAttribute('aria-pressed', String(d === dot));
+      });
+      art.style.setProperty('--f', dot.style.getPropertyValue('--c'));
+      name.textContent = dot.getAttribute('aria-label');
+    }));
+  });
+
   // only one question open at a time
   const qs = $$('.q');
   qs.forEach((d) => d.addEventListener('toggle', () => {
     if (d.open) qs.forEach((o) => { if (o !== d) o.open = false; });
   }));
 
-  // a little depth on the hero pieces
-  const stage = $('.stage');
-  if (stage && matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const objs = $$('.obj', stage);
-    stage.parentElement.addEventListener('pointermove', (e) => {
-      const r = stage.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5;
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      objs.forEach((o, i) => {
-        const d = o.classList.contains('obj--hero') ? 10 : 18 + (i % 3) * 6;
-        o.style.transform = `translate(${(-x * d).toFixed(1)}px, ${(-y * d).toFixed(1)}px)`;
-      });
-    });
-  }
-
   // enquiry: chips, then WhatsApp with the message ready
   $$('.choices').forEach((group) => {
     group.addEventListener('click', (e) => {
       const b = e.target.closest('.choice');
       if (!b) return;
-      $$('.choice', group).forEach((c) => c.classList.toggle('is-on', c === b));
+      $$('.choice', group).forEach((c) => {
+        c.classList.toggle('is-on', c === b);
+        c.setAttribute('aria-pressed', String(c === b));
+      });
     });
   });
   const form = $('#enquiry');

@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html><head><meta charset="utf-8">
+<!-- The share picture (site/assets/brand/og.jpg), 1200x630. Open in a browser at that size and screenshot. -->
 <style>
 @font-face{font-family:"Chakra Petch";font-weight:700;src:url(../site/assets/fonts/chakra-bold.woff2) format("woff2")}
 @font-face{font-family:"Manrope";font-weight:400 800;src:url(../site/assets/fonts/manrope.woff2) format("woff2")}
 html,body{margin:0}
-.og{position:relative;width:1200px;height:630px;overflow:hidden;color:#fff;font-family:Manrope,sans-serif;
-  background:radial-gradient(120% 90% at 85% 10%,#3B2D1E 0%,#16110D 52%,#0A0807 100%)}
-.og::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 360px at 78% 46%,rgba(216,195,160,.32),transparent 65%)}
-.copy{position:absolute;left:80px;top:96px;display:grid;gap:22px}
-.tile{width:92px;height:92px;border-radius:26px;background:#0C0A09;display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
-.tile img{width:54px}
-h1{margin:10px 0 0;font-family:"Chakra Petch";font-weight:700;font-size:96px;line-height:.98}
-p{margin:0;font-size:30px;color:rgba(243,233,215,.85)}
-.obj{position:absolute;filter:drop-shadow(0 30px 40px rgba(0,0,0,.5))}
-.a{left:740px;top:96px;width:200px;rotate:-8deg}
-.b{left:900px;top:70px;width:200px;rotate:8deg}
-.c{left:600px;top:360px;width:200px}
+.og{position:relative;width:1200px;height:630px;overflow:hidden;color:#F5F5F7;font-family:Manrope,sans-serif;background:#000}
+.photo{position:absolute;right:-120px;top:-20px;width:900px;height:670px;object-fit:cover;object-position:50% 20%;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 34%);mask-image:linear-gradient(to right,transparent 0,#000 34%)}
+.copy{position:absolute;left:80px;top:110px;display:grid;gap:22px;justify-items:start}
+.tile{width:88px;height:88px;border-radius:22px;background:#000;display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.tile img{width:50px}
+h1{margin:8px 0 0;font-family:"Chakra Petch";font-weight:700;font-size:104px;line-height:.98}
+p{margin:0;font-size:30px;line-height:1.35;color:#A1A1A6}
+.cta{margin-top:10px;display:inline-flex;align-items:center;height:56px;padding:0 28px;border-radius:999px;background:#0071E3;color:#fff;font-family:"Chakra Petch";font-weight:700;font-size:24px}
 </style></head><body>
 <div class="og">
-  <img class="obj a" src="../site/assets/3d/iphone-burgundy.webp">
-  <img class="obj b" src="../site/assets/3d/duo-closed.webp">
-  <img class="obj c" src="../site/assets/3d/earbuds.webp">
+  <img class="photo" src="../site/assets/photos/hero-iphone-orange.webp" alt="">
   <div class="copy">
-    <div class="tile"><img src="../site/assets/brand/mark-white.png"></div>
+    <div class="tile"><img src="../site/assets/brand/mark-white.png" alt=""></div>
     <h1>iDrop</h1>
     <p>Premium Apple Resellers<br>Sulthan Bathery, Wayanad</p>
+    <span class="cta">idropdigital.com</span>
   </div>
 </div>
 </body></html>
