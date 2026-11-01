@@ -1,0 +1,12 @@
+# idropdigital.com on SkiFi's own server, deployed with Dokploy as a Docker
+# Compose service built from GitHub (NAVICORP/idrop-site, ./deploy/docker-compose.yml).
+# Domains idropdigital.com and www.idropdigital.com go to service `site`, port 8000.
+# No database, no secrets.
+services:
+  site:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    expose:
+      - "8000"
