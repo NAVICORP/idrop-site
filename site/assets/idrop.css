@@ -1,10 +1,10 @@
 /* idropdigital.com: Kuree's layout in iDrop's ink and champagne gold, with
-   iDrop's own type: Chakra Petch for titles, Inter for text.
+   iDrop's own type: Chakra Petch for titles, Manrope for text.
    No letter spacing anywhere. */
 @font-face{font-family:"Chakra Petch";font-weight:500;font-style:normal;font-display:swap;src:url(/assets/fonts/chakra-medium.woff2) format("woff2")}
 @font-face{font-family:"Chakra Petch";font-weight:600;font-style:normal;font-display:swap;src:url(/assets/fonts/chakra-semibold.woff2) format("woff2")}
 @font-face{font-family:"Chakra Petch";font-weight:700;font-style:normal;font-display:swap;src:url(/assets/fonts/chakra-bold.woff2) format("woff2")}
-@font-face{font-family:"Inter";font-weight:100 900;font-style:normal;font-display:swap;src:url(/assets/fonts/inter.woff2) format("woff2")}
+@font-face{font-family:"Manrope";font-weight:400 800;font-style:normal;font-display:swap;src:url(/assets/fonts/manrope.woff2) format("woff2")}
 
 :root{
   --ink:#0C0A09;--ink2:#1C1917;--graphite:#292524;--stone7:#44403C;--muted:#6E6762;--stone3:#D6D3D1;--stone2:#E7E5E4;--stone1:#F5F5F4;
@@ -12,7 +12,7 @@
   --gold:#B08D57;--gold2:#D8C3A0;--gold3:#EBDDC4;--goldInk:#7A5C2E;--star:#E0A82E;
   --sand:#F4EEE4;--mist:#EDF0F3;--stoneT:#F0EEEB;--blush:#F5ECE9;--sage:#EDF1EC;
   --fh:"Chakra Petch",system-ui,sans-serif;
-  --fb:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --fb:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
   --ease:cubic-bezier(.2,.75,.2,1);
   --sec:120px;
 }
