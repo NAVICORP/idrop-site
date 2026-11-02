@@ -1,27 +1,79 @@
 <!DOCTYPE html>
 <html><head><meta charset="utf-8">
-<!-- The share picture (site/assets/brand/og.jpg), 1200x630. Open in a browser at that size and screenshot. -->
+<!-- The share picture (site/assets/brand/og-glass.jpg), 1200x630, in the site's look:
+     the orange iPhone from the hero, and the liquid glass bar floating over it.
+     Render it in Chromium at 1200x630 (the lens on the glass needs Chromium). -->
 <style>
 @font-face{font-family:"Chakra Petch";font-weight:700;src:url(../site/assets/fonts/chakra-bold.woff2) format("woff2")}
 @font-face{font-family:"Manrope";font-weight:400 800;src:url(../site/assets/fonts/manrope.woff2) format("woff2")}
-html,body{margin:0}
+html,body{margin:0;background:#000}
 .og{position:relative;width:1200px;height:630px;overflow:hidden;color:#F5F5F7;font-family:Manrope,sans-serif;background:#000}
-.photo{position:absolute;right:-120px;top:-20px;width:900px;height:670px;object-fit:cover;object-position:50% 20%;
-  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 34%);mask-image:linear-gradient(to right,transparent 0,#000 34%)}
-.copy{position:absolute;left:80px;top:110px;display:grid;gap:22px;justify-items:start}
-.tile{width:88px;height:88px;border-radius:22px;background:#000;display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
-.tile img{width:50px}
-h1{margin:8px 0 0;font-family:"Chakra Petch";font-weight:700;font-size:104px;line-height:.98}
-p{margin:0;font-size:30px;line-height:1.35;color:#A1A1A6}
-.cta{margin-top:10px;display:inline-flex;align-items:center;height:56px;padding:0 28px;border-radius:999px;background:#0071E3;color:#fff;font-family:"Chakra Petch";font-weight:700;font-size:24px}
+.photo{position:absolute;right:-150px;top:-40px;width:960px;height:710px;object-fit:cover;object-position:50% 14%;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 36%);mask-image:linear-gradient(to right,transparent 0,#000 36%)}
+
+/* the glass bar, as on the site */
+.cap{position:absolute;left:40px;right:40px;top:30px;height:78px;border-radius:999px;isolation:isolate;
+  display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 16px;
+  background:linear-gradient(180deg,rgba(72,72,78,.42),rgba(22,22,26,.34));
+  backdrop-filter:var(--lf,blur(0px)) blur(6px) saturate(190%) brightness(1.05);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.42),inset 0 -1px 1px rgba(255,255,255,.12),inset 0 0 0 1px rgba(255,255,255,.14),0 14px 40px rgba(0,0,0,.45)}
+.cap::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;z-index:-1;
+  background:linear-gradient(125deg,rgba(255,255,255,.7),rgba(255,255,255,.12) 30%,rgba(255,255,255,0) 52%,rgba(255,255,255,.18) 76%,rgba(255,255,255,.6));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.cap::after{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;
+  background:radial-gradient(260px 60px at 62% 0%,rgba(255,255,255,.32),rgba(255,255,255,0) 72%)}
+.brand{display:flex;align-items:center;gap:14px;font-family:"Chakra Petch";font-weight:700;font-size:38px}
+.tile{width:52px;height:52px;border-radius:15px;background:#000;display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.2),0 2px 8px rgba(0,0,0,.3)}
+.tile img{width:29px}
+.url{display:inline-flex;align-items:center;height:56px;padding:0 28px;border-radius:999px;background:#0071E3;color:#fff;font-weight:700;font-size:24px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.3),inset 0 -1px 0 rgba(0,0,0,.1),0 6px 18px rgba(0,113,227,.35)}
+
+.copy{position:absolute;left:72px;top:170px;display:grid;gap:22px;justify-items:start;max-width:600px}
+.where{display:inline-flex;align-items:center;gap:10px;padding:10px 20px 10px 16px;border-radius:999px;font-size:22px;font-weight:600;color:#D2D2D7;
+  background:rgba(255,255,255,.08);box-shadow:inset 0 1px 1px rgba(255,255,255,.3),inset 0 0 0 1px rgba(255,255,255,.12),0 6px 18px rgba(0,0,0,.3)}
+.where svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+h1{margin:0;font-family:"Chakra Petch";font-weight:700;font-size:84px;line-height:1;color:#F5F5F7}
+p{margin:0;font-size:27px;line-height:1.4;color:#A1A1A6;max-width:560px;text-wrap:balance}
 </style></head><body>
 <div class="og">
   <img class="photo" src="../site/assets/photos/hero-iphone-orange.webp" alt="">
+  <div class="cap">
+    <span class="brand"><span class="tile"><img src="../site/assets/brand/mark-white.png" alt=""></span>iDrop</span>
+    <span class="url">idropdigital.com</span>
+  </div>
   <div class="copy">
-    <div class="tile"><img src="../site/assets/brand/mark-white.png" alt=""></div>
-    <h1>iDrop</h1>
-    <p>Premium Apple Resellers<br>Sulthan Bathery, Wayanad</p>
-    <span class="cta">idropdigital.com</span>
+    <span class="where"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Sulthan Bathery, Wayanad</span>
+    <h1>Own the Apple<br>you love.</h1>
+    <p>New and certified pre-owned, with warranty, easy EMI and delivery all over India.</p>
   </div>
 </div>
+<script>
+// the lens at the bar's edge, the same map the site makes in idrop.js
+(() => {
+  const el = document.querySelector('.cap');
+  const w = el.offsetWidth, h = el.offsetHeight, r = h / 2, edge = 22;
+  const c = document.createElement('canvas'); c.width = w; c.height = h;
+  const ctx = c.getContext('2d'); const img = ctx.createImageData(w, h); const d = img.data;
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+    const px = x + .5 - w / 2, py = y + .5 - h / 2;
+    const qx = Math.abs(px) - (w / 2 - r), qy = Math.abs(py) - (h / 2 - r);
+    const depth = r - (Math.hypot(Math.max(qx, 0), Math.max(qy, 0)) + Math.min(Math.max(qx, qy), 0));
+    let dx = 0, dy = 0;
+    if (depth > 0 && depth < edge) {
+      let nx, ny;
+      if (qx > 0 && qy > 0) { const l = Math.hypot(qx, qy) || 1; nx = qx / l; ny = qy / l; } else if (qx > qy) { nx = 1; ny = 0; } else { nx = 0; ny = 1; }
+      const f = (1 - depth / edge) ** 2; dx = -Math.sign(px) * nx * f; dy = -Math.sign(py) * ny * f;
+    }
+    const i = (y * w + x) * 4; d[i] = 128 + dx * 127; d[i + 1] = 128 + dy * 127; d[i + 2] = 128; d[i + 3] = 255;
+  }
+  ctx.putImageData(img, 0, 0);
+  const NS = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(NS, 'svg'); svg.setAttribute('width', 0); svg.setAttribute('height', 0); svg.style.position = 'absolute';
+  svg.innerHTML = `<filter id="lens" x="0" y="0" width="${w}" height="${h}" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">`
+    + `<feImage href="${c.toDataURL()}" x="0" y="0" width="${w}" height="${h}" preserveAspectRatio="none" result="map"/>`
+    + `<feDisplacementMap in="SourceGraphic" in2="map" scale="38" xChannelSelector="R" yChannelSelector="G"/></filter>`;
+  document.body.appendChild(svg);
+  el.style.setProperty('--lf', 'url(#lens)');
+})();
+</script>
 </body></html>
