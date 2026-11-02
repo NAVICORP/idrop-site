@@ -457,3 +457,13 @@ a:hover .link .ic,.link:hover .ic{transform:translateX(3px)}
   .rise{opacity:1;transform:none}
   .js .rv{opacity:1;transform:none}
 }
+
+/* the new iPhones: product photos */
+.lt__img{position:absolute;left:50%;z-index:-1;height:auto;transform:translateX(-50%)}
+.lt__img--pro{bottom:40px;width:auto;height:390px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.55))}
+.lt__img--duo{bottom:0;width:min(500px,90%)}
+.lt .link{margin-top:14px}
+@media (max-width:640px){
+  .lt__img--pro{height:330px;bottom:28px}
+  .lt__img--duo{width:94%}
+}
