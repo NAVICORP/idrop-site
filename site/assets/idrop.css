@@ -21,14 +21,14 @@ html{scroll-behavior:smooth;scroll-padding-top:64px;-webkit-text-size-adjust:100
 body{margin:0;background:var(--white);color:var(--ink);font-family:var(--fb);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;overflow-x:clip}
 img{display:block;max-width:100%}
 a{color:inherit}
-h1,h2,h3{font-family:var(--fh);font-weight:700;margin:0;text-wrap:balance}
+h1,h2,h3{font-family:var(--fb);font-weight:700;margin:0;text-wrap:balance}
 p{margin:0;text-wrap:pretty}
 ul,ol{margin:0;padding:0;list-style:none}
 figure{margin:0}
 button{font:inherit;color:inherit;cursor:pointer}
 svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .ic{width:20px;height:20px;flex:none}
-.btn,.link,.pill,.kicker,.chips span,.choice,.trust__list,.acc li,.nav__links a,.menu a,.terms a,.q summary,.foot__col b,.hero__where,.offer__tag,.finish__name,.wcard__term,.ask__call{font-family:var(--fh)}
+
 .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
 ::selection{background:rgba(0,113,227,.18)}
 :focus-visible{outline:3px solid rgba(0,113,227,.6);outline-offset:3px;border-radius:10px}
@@ -66,7 +66,7 @@ a:hover .link .ic,.link:hover .ic{transform:translateX(3px)}
 .nav{position:sticky;top:0;z-index:50;background:rgba(251,251,253,.8);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);transition:box-shadow .3s}
 .nav.is-stuck{box-shadow:0 1px 0 rgba(0,0,0,.08)}
 .nav__in{max-width:1200px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-family:var(--fh);font-weight:700;font-size:21px;color:var(--ink)}
+.brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-family:var(--fb);font-weight:800;font-size:21px;color:var(--ink)}
 .brand__tile{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--black)}
 .brand__tile img{width:18px;height:auto}
 .nav__links{display:flex;gap:2px}
@@ -457,3 +457,16 @@ a:hover .link .ic,.link:hover .ic{transform:translateX(3px)}
   .rise{opacity:1;transform:none}
   .js .rv{opacity:1;transform:none}
 }
+
+/* the new iPhones: product photos */
+.lt__img{position:absolute;left:50%;z-index:-1;height:auto;transform:translateX(-50%)}
+.lt__img--pro{bottom:40px;width:auto;height:390px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.55))}
+.lt__img--duo{bottom:0;width:min(500px,90%)}
+.lt .link{margin-top:14px}
+@media (max-width:640px){
+  .lt__img--pro{height:330px;bottom:28px}
+  .lt__img--duo{width:94%}
+}
+
+/* Chakra Petch only for the big titles; everything else is Manrope */
+h1,h2,.lt h3,.tile h3,.way h3{font-family:var(--fh)}
