@@ -1,5 +1,15 @@
 /* idropdigital.com: the menu, the sticky bar, reveals, the finish pickers and the WhatsApp enquiry. */
 (() => {
+  // send a small report to the shop app; never in the way of WhatsApp or a call
+  const APP = 'https://app.idropdigital.com';
+  const send = (path, data) => {
+    try {
+      const body = JSON.stringify({ site: 'idrop', ...data });
+      if (navigator.sendBeacon && navigator.sendBeacon(APP + path, new Blob([body], { type: 'text/plain;charset=UTF-8' }))) return;
+      fetch(APP + path, { method: 'POST', body, keepalive: true, mode: 'no-cors', headers: { 'content-type': 'text/plain;charset=UTF-8' } }).catch(() => {});
+    } catch (_) { /* reporting is optional */ }
+  };
+
   document.documentElement.classList.add('js');
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -90,8 +100,33 @@
       const msg = form.msg.value.trim();
       if (msg) lines.push(msg);
       window.open(`https://wa.me/918848026572?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener');
+      // the shop app keeps the enquiry so the team can follow up
+      send('/site/enquiry', {
+        name, phone, want: pick('want'), condition: pick('cond'), message: msg,
+        page: '#contact', website: form.website ? form.website.value : '',
+      });
     });
   }
+
+  // which buttons people tap, by product, for the shop app's reports
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    let kind = '';
+    if (href.includes('wa.me/')) {
+      const label = a.textContent.toLowerCase();
+      kind = label.includes('availability') ? 'availability' : label.includes('enquire') ? 'enquire' : 'whatsapp';
+    } else if (href.startsWith('tel:')) kind = 'call';
+    else if (href.includes('google.com/maps')) kind = 'directions';
+    else if (href.includes('instagram.com')) kind = 'instagram';
+    if (!kind) return;
+    const tile = a.closest('.lt, .tile, .way');
+    const product = tile ? (tile.querySelector('h3')?.textContent.trim() || '') : '';
+    const sec = a.closest('section, footer, header, .getbar');
+    const where = !sec ? '' : sec.id ? `#${sec.id}` : (sec.classList[0] || sec.tagName.toLowerCase());
+    send('/site/tap', { kind, product, page: where });
+  }, { capture: true });
 
   const y = $('#year');
   if (y) y.textContent = new Date().getFullYear();
