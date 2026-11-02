@@ -470,3 +470,11 @@ a:hover .link .ic,.link:hover .ic{transform:translateX(3px)}
 
 /* Chakra Petch only for the big titles; everything else is Manrope */
 h1,h2,.lt h3,.tile h3,.way h3{font-family:var(--fh)}
+
+/* Secondary actions (Visit the store, Enquire, Check availability, Call us) are white buttons */
+.link{gap:6px;min-height:44px;padding:0 18px 0 22px;border-radius:980px;background:#fff;color:#1D1D1F;font-size:17px;font-weight:600;box-shadow:0 0 0 1px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.08);transition:background .2s var(--ease)}
+.link:hover{text-decoration:none;background:#F0F0F3}
+.link--dark,.tile--mac .link,.tile--airpods .link{color:#1D1D1F}
+.tile .link{min-height:40px;font-size:16px;margin-top:8px}
+.lt .link{margin-top:16px}
+@media (max-width:640px){.ig__copy{flex-basis:calc(100% - 60px)}.ig .link{width:auto;padding:0 18px 0 22px;margin-left:60px}}
