@@ -205,8 +205,8 @@ a:hover .link .ic,.link:hover .ic{transform:translateX(3px)}
 .tile--mac .tile__img{--ar:1600/1163;--fade:14%}
 .tile--ipad{--bg:#1A2228}
 .tile--ipad .tile__img{--ar:1600/1139}
-.tile--airpods{--bg:#0E89AF;--fg:#000;--sub:#000}
-.tile--airpods .chips span{background:rgba(255,255,255,.55)}
+.tile--airpods{--bg:#0E89AF;--fg:#fff;--sub:#fff}
+.tile--airpods .chips span{background:linear-gradient(180deg,rgba(255,255,255,.26),rgba(255,255,255,.12));box-shadow:inset 0 1px 1px rgba(255,255,255,.45),inset 0 0 0 1px rgba(255,255,255,.2),0 3px 10px rgba(0,0,0,.12)}
 .tile--airpods .link{color:#000}
 .tile--airpods .tile__img{--ar:3/2;--pos:50% 58%}
 .tile--acc{--bg:var(--white)}
