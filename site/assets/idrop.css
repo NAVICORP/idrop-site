@@ -66,7 +66,7 @@ a:hover .link .ic,.link:hover .ic{transform:translateX(3px)}
 .nav{position:sticky;top:0;z-index:50;background:rgba(251,251,253,.8);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);transition:box-shadow .3s}
 .nav.is-stuck{box-shadow:0 1px 0 rgba(0,0,0,.08)}
 .nav__in{max-width:1200px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-family:var(--fb);font-weight:800;font-size:21px;color:var(--ink)}
+.brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-family:var(--fh);font-weight:700;font-size:21px;color:var(--ink)}
 .brand__tile{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--black)}
 .brand__tile img{width:18px;height:auto}
 .nav__links{display:flex;gap:2px}
@@ -468,5 +468,13 @@ a:hover .link .ic,.link:hover .ic{transform:translateX(3px)}
   .lt__img--duo{width:94%}
 }
 
-/* Chakra Petch only for the big titles; everything else is Manrope */
+/* Chakra Petch only for the big titles and the iDrop name (the logo); everything else is Manrope */
 h1,h2,.lt h3,.tile h3,.way h3{font-family:var(--fh)}
+
+/* Secondary actions (Visit the store, Enquire, Check availability, Call us) are white buttons */
+.link{gap:6px;min-height:44px;padding:0 18px 0 22px;border-radius:980px;background:#fff;color:#1D1D1F;font-size:17px;font-weight:600;box-shadow:0 0 0 1px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.08);transition:background .2s var(--ease)}
+.link:hover{text-decoration:none;background:#F0F0F3}
+.link--dark,.tile--mac .link,.tile--airpods .link{color:#1D1D1F}
+.tile .link{min-height:40px;font-size:16px;margin-top:8px}
+.lt .link{margin-top:16px}
+@media (max-width:640px){.ig__copy{flex-basis:calc(100% - 60px)}.ig .link{width:auto;padding:0 18px 0 22px;margin-left:60px}}
